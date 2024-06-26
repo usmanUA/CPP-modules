@@ -35,8 +35,8 @@ bool	PhoneBook::input(void)
 
 void	PhoneBook::search(void)
 {
-	int	index;
-	int	contacts;
+	int		index;
+	int		contacts;
 	std::string	input;
 
 	contacts = PHONEBOOK_LEN;
@@ -56,7 +56,15 @@ void	PhoneBook::search(void)
 		input = get_num(INDEX);
 		if (input.empty())
 			break;
-		index = stoi(input) - 1;
+		try
+		{
+			index = stoi(input) - 1;
+		} 
+		catch (const std::out_of_range& e)
+		{
+			std::cout << RANGE << std::endl;
+			continue;
+		}
 		if (index < 0 || index >= PHONEBOOK_LEN)
 			std::cout << RANGE;
 		else if (this->contacts[index].get_first_name().empty())
