@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: uahmed <uahmed@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/25 23:15:35 by uahmed            #+#    #+#             */
-/*   Updated: 2024/06/26 08:27:08 by uahmed           ###   ########.fr       */
+/*   Created: 2024/06/29 19:36:38 by uahmed            #+#    #+#             */
+/*   Updated: 2024/06/29 19:36:49 by uahmed           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../include/HumanB.hpp"
-# include "iostream"
+#include "Harl.hpp"
 
-HumanB::HumanB(std::string name)
+int	main(int argc, char *argv[])
 {
-	this->name = name;
-};
+	Harl harl;
 
-void	HumanB::attack()
-{
-	if (!this->weapon)
-		std::cout << this->name << " does not have a weapon" << std::endl;
-	else
-		std::cout << this->name << " attacks with their " << this->weapon->getType() << std::endl;
-};
-
-void	HumanB::setWeapon(Weapon& weapon)
-{
-	this->weapon = &weapon;
-};
+	if (argc == 2)
+	{
+		harl.complain(argv[1]);
+		exit(0);
+	}
+	std::cout << USAGE;
+}

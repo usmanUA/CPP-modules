@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: uahmed <uahmed@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/25 23:15:35 by uahmed            #+#    #+#             */
-/*   Updated: 2024/06/26 08:27:08 by uahmed           ###   ########.fr       */
+/*   Created: 2024/07/06 23:30:40 by uahmed            #+#    #+#             */
+/*   Updated: 2024/07/06 23:31:20 by uahmed           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../include/HumanB.hpp"
-# include "iostream"
+#include <iostream>
+# include "Fixed.hpp"
 
-HumanB::HumanB(std::string name)
+int main( void )
 {
-	this->name = name;
-};
+	Fixed a;
+	Fixed b( a );
+	Fixed c;
 
-void	HumanB::attack()
-{
-	if (!this->weapon)
-		std::cout << this->name << " does not have a weapon" << std::endl;
-	else
-		std::cout << this->name << " attacks with their " << this->weapon->getType() << std::endl;
-};
+	c = b;
 
-void	HumanB::setWeapon(Weapon& weapon)
-{
-	this->weapon = &weapon;
-};
+	std::cout << a.getRawBits() << std::endl;
+	std::cout << b.getRawBits() << std::endl;
+	std::cout << c.getRawBits() << std::endl;
+	return 0;
+}

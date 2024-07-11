@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.cpp                                         :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: uahmed <uahmed@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/25 23:15:35 by uahmed            #+#    #+#             */
-/*   Updated: 2024/06/26 08:27:08 by uahmed           ###   ########.fr       */
+/*   Created: 2024/07/06 23:27:49 by uahmed            #+#    #+#             */
+/*   Updated: 2024/07/06 23:37:36 by uahmed           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../include/HumanB.hpp"
-# include "iostream"
+#ifndef FIXED_HPP
+# define FIXED_HPP
 
-HumanB::HumanB(std::string name)
+#include <iostream>
+
+class	Fixed
 {
-	this->name = name;
+	private:
+		int	fixed_point_number;
+		static	const	int	fractional_bits = 8;
+	public:
+		Fixed(void);
+		Fixed(const Fixed&);
+		~Fixed(void);
+		Fixed& operator=(const Fixed&);
+
+		int	getRawBits(void) const;
+		void	setRawBits(const int raw);
 };
 
-void	HumanB::attack()
-{
-	if (!this->weapon)
-		std::cout << this->name << " does not have a weapon" << std::endl;
-	else
-		std::cout << this->name << " attacks with their " << this->weapon->getType() << std::endl;
-};
-
-void	HumanB::setWeapon(Weapon& weapon)
-{
-	this->weapon = &weapon;
-};
+#endif

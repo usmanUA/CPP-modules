@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.cpp                                         :+:      :+:    :+:   */
+/*   Point.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: uahmed <uahmed@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/25 23:15:35 by uahmed            #+#    #+#             */
-/*   Updated: 2024/06/26 08:27:08 by uahmed           ###   ########.fr       */
+/*   Created: 2024/07/08 10:40:45 by uahmed            #+#    #+#             */
+/*   Updated: 2024/07/08 10:50:44 by uahmed           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#ifndef POINT_HPP
+# define POINT_HPP
 
-# include "../include/HumanB.hpp"
-# include "iostream"
+# include "Fixed.hpp"
 
-HumanB::HumanB(std::string name)
+class Point
 {
-	this->name = name;
-};
+	private:
+		const	Fixed	x;
+		const	Fixed	y;
 
-void	HumanB::attack()
-{
-	if (!this->weapon)
-		std::cout << this->name << " does not have a weapon" << std::endl;
-	else
-		std::cout << this->name << " attacks with their " << this->weapon->getType() << std::endl;
-};
+	public:
+		Point(void);
+		~Point(void);
+		Point(const float a, const float b);
+		Point(const Point&);
+		Point&	operator=(const Point&);
+		bool	operator==(const Point&) const;
 
-void	HumanB::setWeapon(Weapon& weapon)
-{
-	this->weapon = &weapon;
+		Fixed	getFixedX(void)	const;
+		Fixed	getFixedY(void)	const;
 };
+# endif
