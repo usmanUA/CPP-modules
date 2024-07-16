@@ -7,7 +7,7 @@ DEPSDIR     :=  .deps
 
 RM          :=  rm -rf
 AR          :=  ar -rcs
-CC          :=  g++
+CC          :=  c++
 CFLAGS      :=  -Wall -Werror -Wextra -std=c++98
 DEBUGFLAGS  :=  -g -fsanitize=address
 DEPFLAGS    :=  -c -MT $$@ -MMD -MP -MF $(DEPSDIR)/$$*.d

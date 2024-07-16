@@ -3,18 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   Phonebook_helpers.cpp                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: uahmed <uahmed@student.hive.fi>            +#+  +:+       +#+        */
+/*   By: uahmed <uahmed@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/22 16:22:34 by uahmed            #+#    #+#             */
-/*   Updated: 2024/06/22 17:05:50 by uahmed           ###   ########.fr       */
+/*   Updated: 2024/07/11 17:53:26 by uahmed           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../include/Phonebook.hpp"
-#include <cctype>
+# include "Phonebook.hpp"
 
 bool	num_isdigit(std::string phone)
 {
+	if (phone.empty())
+		return (false);
 	for (int i = 0; i < phone.length(); i++)
 	{
 		if (!isdigit(phone[i]))
@@ -28,6 +29,8 @@ bool	num_isdigit(std::string phone)
 
 bool	string_isalpha(std::string s)
 {
+	if (s.empty())
+		return (false);
 	for (int i = 0; i < s.length(); i++)
 	{
 		if (!isalpha(s[i]))
@@ -41,6 +44,8 @@ bool	string_isalpha(std::string s)
 
 bool	string_isprint(std::string s)
 {
+	if (s.empty())
+		return (false);
 	for (int i = 0; i < s.length(); i++)
 	{
 		if (!isprint(s[i]))
@@ -60,7 +65,9 @@ std::string	get_string(std::string prompt, bool secret)
 	{
 		std::cout << prompt << "\n";
 		if (!getline(std::cin, input))
+		{
 			return (input);
+		}
 	}while (!secret ? !string_isalpha(input) : !string_isprint(input));
 	return (input);
 };

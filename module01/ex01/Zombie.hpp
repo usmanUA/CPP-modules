@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: uahmed <uahmed@student.hive.fi>            +#+  +:+       +#+        */
+/*   By: uahmed <uahmed@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 21:23:30 by uahmed            #+#    #+#             */
-/*   Updated: 2024/06/25 21:52:50 by uahmed           ###   ########.fr       */
+/*   Updated: 2024/07/11 15:27:33 by uahmed           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ class Zombie
 	public:
 		void	announce(void);
 		void	give_name(std::string name);
+		Zombie(void);
 		~Zombie(void);
 	private:
 		std::string	name;

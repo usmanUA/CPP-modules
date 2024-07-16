@@ -1,7 +1,4 @@
-# include "../include/Phonebook.hpp"
-# include <iostream>
-#include <string>
-
+# include "Phonebook.hpp"
 
 int	main(void)
 {
@@ -21,7 +18,10 @@ int	main(void)
 				break;
 		}
 		else if (input == "SEARCH")
-			phonebook.search();
+		{
+			if (phonebook.search() == false)
+				break;
+		}
 	}
 	return (0);
 };

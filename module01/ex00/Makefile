@@ -13,9 +13,7 @@ SCREENCLR   :=  printf "\033c"
 SLEEP       :=  sleep .1
 
 SOURCES     :=  main.cpp \
-		Zombie.cpp \
-		newZombie.cpp \
-		randomChump.cpp \
+				Zombie.cpp \
 
 SRCS        :=  $(foreach file, $(SOURCES), $(shell find $(CURDIR) -name $(file)))
 OBJS        :=  $(patsubst $(CURDIR)/%.cpp, $(OBJSDIR)/%.o, $(SRCS))

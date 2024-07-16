@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: uahmed <uahmed@student.hive.fi>            +#+  +:+       +#+        */
+/*   By: uahmed <uahmed@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/22 16:17:59 by uahmed            #+#    #+#             */
-/*   Updated: 2024/06/22 16:18:02 by uahmed           ###   ########.fr       */
+/*   Updated: 2024/07/11 14:37:09 by uahmed           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../include/Contact.hpp"
+# include "Contact.hpp"
 
 bool	Contact::set_first_name(std::string first)
 {

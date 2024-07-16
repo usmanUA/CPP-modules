@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: uahmed <uahmed@student.hive.fi>            +#+  +:+       +#+        */
+/*   By: uahmed <uahmed@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 21:27:03 by uahmed            #+#    #+#             */
-/*   Updated: 2024/06/25 21:39:57 by uahmed           ###   ########.fr       */
+/*   Updated: 2024/07/11 15:31:37 by uahmed           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,11 @@
 void	Zombie::give_name(std::string name)
 {
 	this->name = name;
+};
+
+Zombie::Zombie(void)
+{
+	std::cout << "Unknown zombie getting created" << std::endl;
 };
 
 Zombie::~Zombie(void)

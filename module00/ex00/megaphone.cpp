@@ -3,22 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   megaphone.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: uahmed <uahmed@student.hive.fi>            +#+  +:+       +#+        */
+/*   By: uahmed <uahmed@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/22 21:24:21 by uahmed            #+#    #+#             */
-/*   Updated: 2024/06/22 21:24:27 by uahmed           ###   ########.fr       */
+/*   Updated: 2024/07/11 14:51:25 by uahmed           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include <iostream>
 # include <string>
-# include <cctype>
 
 # define PHONE "* LOUD AND UNBEARABLE FEEDBACK NOISE *\n"
 
 bool	strtrim(std::string &s)
 {
-	char	ws[6] = {' ', '\t', '\n', '\r', '\v', '\f'};
+	std::string	ws = " \t\n\r\v\f";
 	size_t	n;
 
 	n = s.find_first_not_of(ws);
@@ -26,7 +25,7 @@ bool	strtrim(std::string &s)
 		return (false);
 	s.erase(0,n);
 	n = s.find_last_not_of(ws);
-	s.erase(n, s.length());
+	s.erase(n + 1);
 	return (true);
 };
 
@@ -48,7 +47,7 @@ void	megaphone(int tot, char **args)
 		if (i < tot - 1)
 			std::cout << " ";
 	}
-	std::cout << "\n";
+	std::cout << std::endl;
 };
 
 int	main(int argc, char **argv)

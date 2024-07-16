@@ -27,7 +27,8 @@ Fixed::~Fixed(void)
 Fixed::Fixed(const Fixed& from)
 {
 	std::cout << "Copy constructor called" << std::endl;
-	this->fixed_point_number = from.fixed_point_number;
+	if (this != &from)
+		*this = from;
 };
 
 Fixed&	Fixed::operator=(const Fixed& from)

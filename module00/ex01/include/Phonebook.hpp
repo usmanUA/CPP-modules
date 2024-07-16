@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Phonebook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: uahmed <uahmed@student.hive.fi>            +#+  +:+       +#+        */
+/*   By: uahmed <uahmed@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/22 16:21:08 by uahmed            #+#    #+#             */
-/*   Updated: 2024/06/22 17:01:24 by uahmed           ###   ########.fr       */
+/*   Updated: 2024/07/11 14:37:24 by uahmed           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,10 @@
 class PhoneBook
 {
 	public:
+		PhoneBook(void);
+		~PhoneBook(void);
 		bool	input();
-		void	search();
+		bool	search();
 
 	private:
 		int	index;

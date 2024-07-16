@@ -3,14 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   Phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: uahmed <uahmed@student.hive.fi>            +#+  +:+       +#+        */
+/*   By: uahmed <uahmed@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/22 11:14:38 by uahmed            #+#    #+#             */
-/*   Updated: 2024/06/22 16:25:49 by uahmed           ###   ########.fr       */
+/*   Updated: 2024/07/11 17:56:39 by uahmed           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../include/Phonebook.hpp"
+# include "Phonebook.hpp"
+
+PhoneBook::PhoneBook(void)
+{
+	this->index = 0;
+};
+
+PhoneBook::~PhoneBook(void)
+{
+};
 
 bool	PhoneBook::input(void)
 {
@@ -33,7 +42,7 @@ bool	PhoneBook::input(void)
 	return (true);
 };
 
-void	PhoneBook::search(void)
+bool	PhoneBook::search(void)
 {
 	int		index;
 	int		contacts;
@@ -48,14 +57,14 @@ void	PhoneBook::search(void)
 	if (contacts == 0)
 	{
 		std::cout << EMPTY;
-		return;
+		return (true);
 	};
 	phonebook(this->contacts);
 	while (true)
 	{
 		input = get_num(INDEX);
 		if (input.empty())
-			break;
+			return (false);
 		try
 		{
 			index = stoi(input) - 1;
@@ -73,4 +82,5 @@ void	PhoneBook::search(void)
 			break;
 	};
 	contact(this->contacts[index]);
+	return (true);
 };
