@@ -17,8 +17,8 @@ DEPSDIR     :=  .deps
 
 RM          :=  rm -rf
 AR          :=  ar -rcs
-CC          :=  g++
-CFLAGS      :=  -Wall -Werror -Wextra -std=c++98
+CC          :=  c++
+CFLAGS      :=  -Wall -Werror -Wextra -std=c++11
 DEBUGFLAGS  :=  -g -fsanitize=address
 DEPFLAGS    :=  -c -MT $$@ -MMD -MP -MF $(DEPSDIR)/$$*.d
 SCREENCLR   :=  printf "\033c"

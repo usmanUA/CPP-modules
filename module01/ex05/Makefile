@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME        :=  Harl
+NAME        :=  harl
 ERRTXT      :=  error.txt
 OBJSDIR     :=  build
 INCSDIR	    :=	include
@@ -20,7 +20,7 @@ DEPSDIR     :=  .deps
 RM          :=  rm -rf
 AR          :=  ar -rcs
 CC          :=  c++
-CFLAGS      :=  -Wall -Werror -Wextra -std=c++98
+CFLAGS      :=  -Wall -Werror -Wextra -std=c++11
 DEBUGFLAGS  :=  -g -fsanitize=address
 DEPFLAGS    :=  -c -MT $$@ -MMD -MP -MF $(DEPSDIR)/$$*.d
 SCREENCLR   :=  printf "\033c"

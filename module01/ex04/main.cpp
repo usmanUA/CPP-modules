@@ -16,6 +16,8 @@
 #include <fstream>
 #include <string>
 
+# define USAGE "\033[31mmysed:\033[0m\n\t\033[36m./mysed <filename> <s1> <s2>\033[0m\n"
+
 int	openError(std::string filename)
 {
 	std::cout << "Error opening " << filename  << std::endl;
@@ -59,15 +61,18 @@ int	main(int argc, char **argv)
 		std::string	replaceMe = argv[2];
 		std::string	replaceWith = argv[3];
 		std::ifstream	inputFile(input);
-		std::ofstream	outputFile(input + ".replace");
 
 		if (!inputFile.is_open())
 			return (openError(input));
+		std::ofstream	outputFile(input + ".replace");
 		if (!outputFile.is_open())
 			return (openError(input + ".replace"));
 		while (std::getline(inputFile, line))
 			outputFile << replaceStr(line, replaceMe, replaceWith) << std::endl;
 		inputFile.close();
 		outputFile.close();
+		return 0;
 	};
+	std::cout << USAGE;
+	return 0;
 };

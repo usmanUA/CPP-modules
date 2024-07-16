@@ -1,4 +1,4 @@
-NAME        :=  pointers
+NAME        :=  strings
 ERRTXT      :=  error.txt
 OBJSDIR     :=  build
 DEPSDIR     :=  .deps

@@ -5,15 +5,17 @@ DEPSDIR     :=  .deps
 
 RM          :=  rm -rf
 AR          :=  ar -rcs
-CC          :=  g++
-CFLAGS      :=  -Wall -Werror -Wextra -std=c++98
+CC          :=  c++
+CFLAGS      :=  -Wall -Werror -Wextra -std=c++11
 DEBUGFLAGS  :=  -g -fsanitize=address
 DEPFLAGS    :=  -c -MT $$@ -MMD -MP -MF $(DEPSDIR)/$$*.d
 SCREENCLR   :=  printf "\033c"
 SLEEP       :=  sleep .1
 
 SOURCES     :=  main.cpp \
-				Zombie.cpp \
+		Zombie.cpp \
+		newZombie.cpp \
+		randomChump.cpp \
 
 SRCS        :=  $(foreach file, $(SOURCES), $(shell find $(CURDIR) -name $(file)))
 OBJS        :=  $(patsubst $(CURDIR)/%.cpp, $(OBJSDIR)/%.o, $(SRCS))

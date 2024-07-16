@@ -19,7 +19,8 @@ int	main(int argc, char *argv[])
 	if (argc == 2)
 	{
 		harl.complain(argv[1]);
-		exit(0);
+		return (0);
 	}
 	std::cout << USAGE;
+	return (0);
 }
