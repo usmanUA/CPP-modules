@@ -13,7 +13,6 @@
 # define IMATERIASOURCE_HPP
 
 # include "AMateria.hpp"
-#include "ex03/IMateriaSource.hpp"
 
 class	IMateriaSource
 {
