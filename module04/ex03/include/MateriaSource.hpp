@@ -13,7 +13,6 @@
 # define MATERIASOURCE_HPP
 
 # include "IMateriaSource.hpp"
-#include "ex03/MateriaSource.hpp"
 
 class	MateriaSource:	public	IMateriaSource
 {
