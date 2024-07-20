@@ -33,10 +33,13 @@ ClapTrap::ClapTrap(const std::string& Name)
 
 ClapTrap::ClapTrap(const ClapTrap& from)
 {
-	this->Name = from.Name;
-	this->hitPoints = from.hitPoints;
-	this->energyPoints = from.energyPoints;
-	this->attackDamage = from.attackDamage;
+	if (this != &from)
+	{
+		this->Name = from.Name;
+		this->hitPoints = from.hitPoints;
+		this->energyPoints = from.energyPoints;
+		this->attackDamage = from.attackDamage;
+	}
 	std::cout << "ClapTrap " << this->Name << " copy constructed!" << std::endl;
 };
 

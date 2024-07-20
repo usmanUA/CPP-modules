@@ -5,14 +5,16 @@
 #                                                     +:+ +:+         +:+      #
 #    By: uahmed <uahmed@student.hive.fi>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/07/07 11:05:42 by uahmed            #+#    #+#              #
-#    Updated: 2024/07/07 11:08:55 by uahmed           ###   ########.fr        #
+#    Created: 2024/07/14 20:03:19 by uahmed            #+#    #+#              #
+#    Updated: 2024/07/14 20:03:27 by uahmed           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME        :=  fragtrap
 ERRTXT      :=  error.txt
 OBJSDIR     :=  build
+INCSDIR	    :=	include
+SRCSDIR	    :=	src
 DEPSDIR     :=  .deps
 
 RM          :=  rm -rf
@@ -29,9 +31,10 @@ SOURCES     :=  main.cpp \
 		ScavTrap.cpp \
 		FragTrap.cpp \
 
-SRCS        :=  $(foreach file, $(SOURCES), $(shell find $(CURDIR) -name $(file)))
-OBJS        :=  $(patsubst $(CURDIR)/%.cpp, $(OBJSDIR)/%.o, $(SRCS))
-DEPS        :=  $(patsubst $(CURDIR)/%.cpp, $(DEPSDIR)/%.d, $(SRCS))
+SRCS        :=  $(foreach file, $(SOURCES), $(shell find $(SRCSDIR) -name $(file)))
+OBJS        :=  $(patsubst $(SRCSDIR)/%.cpp, $(OBJSDIR)/%.o, $(SRCS))
+DEPS        :=  $(patsubst $(SRCSDIR)/%.cpp, $(DEPSDIR)/%.d, $(SRCS))
+INCS	    :=	$(foreach header, $(INCSDIR), -I $(header))
 
 F           =   =====================================
 B           =   \033[1m
@@ -42,11 +45,11 @@ C           =   \033[36m
 R           =   \033[31m
 Y           =   \033[33m
 
-vpath %.cpp $(CURDIR)
+vpath %.cpp $(SRCSDIR)
 
 define cc_cmd
 $(OBJSDIR)/%.o: %.cpp | $(OBJSDIR) $(DEPSDIR)
-	@if ! $(CC) $(CFLAGS) $(DEPFLAGS) $$< -o $$@ 2> $(ERRTXT); then \
+	@if ! $(CC) $(INCS) $(DEPFLAGS) $$< -o $$@ 2> $(ERRTXT); then \
 		printf "$(R)$(B)\nERROR!\n$(F)$(T)\n"; \
 		printf "$(V)Unable to create object file:$(T)\n\n"; \
 		printf "$(R)$(B)$$@$(T)\n"; \
@@ -76,9 +79,9 @@ re: fclean all
 
 title:
 	@$(SCREENCLR) && printf "\n"
-	@printf "$(C)╔╦╗╔═╗╔╦╗╦ ╦╦  ╔═╗╔═╗╔═╗$(T)\n"
-	@printf "$(C)║║╠║ ║ ║║║ ║║  ║╣ ║║║║║║$(T)\n"
-	@printf "$(C)╩ ╩╚═╝═╩╝╚═╝╩═╝╚═╝╚═╝╚═╝  by uahmed$(T)\n"
+	@printf "$(C)╔╦╗╔═╗╔╦╗╦ ╦╦  ╔═╗$(T)\n"
+	@printf "$(C)║║╠║ ║ ║║║ ║║  ║╣ $(T)\n"
+	@printf "$(C)╩ ╩╚═╝═╩╝╚═╝╩═╝╚═╝  by uahmed$(T)\n"
 	@printf "$(G)$(B)$(F)\n$(T)\n"
 
 finish:
