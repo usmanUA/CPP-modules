@@ -13,7 +13,6 @@
 # define CHARACTER_HPP
 
 # include "ICharacter.hpp"
-#include "ex03/ICharacter.hpp"
 
 class	Character:	public ICharacter
 {
