@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME        :=  abstractanimal
+NAME        :=  materia
 ERRTXT      :=  error.txt
 OBJSDIR     :=  build
 INCSDIR	    :=	include
@@ -19,20 +19,19 @@ DEPSDIR     :=  .deps
 
 RM          :=  rm -rf
 AR          :=  ar -rcs
-CC          :=  g++
-CFLAGS      :=  -Wall -Werror -Wextra -std=c++98
+CC          :=  c++
+CFLAGS      :=  -Wall -Werror -Wextra -std=c++11
 DEBUGFLAGS  :=  -g -fsanitize=address
 DEPFLAGS    :=  -c -MT $$@ -MMD -MP -MF $(DEPSDIR)/$$*.d
 SCREENCLR   :=  printf "\033c"
 SLEEP       :=  sleep .1
 
 SOURCES     :=  main.cpp \
-		Animal.cpp \
-		WrongAnimal.cpp \
-		Dog.cpp \
-		Cat.cpp \
-		WrongCat.cpp \
-		Brain.cpp \
+		AMateria.cpp \
+		Ice.cpp \
+		Cure.cpp \
+		Character.cpp \
+		MateriaSource.cpp \
 
 SRCS        :=  $(foreach file, $(SOURCES), $(shell find $(SRCSDIR) -name $(file)))
 OBJS        :=  $(patsubst $(SRCSDIR)/%.cpp, $(OBJSDIR)/%.o, $(SRCS))
