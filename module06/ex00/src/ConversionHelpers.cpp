@@ -15,11 +15,12 @@
 
 bool	literalIsInt( std::string literal )
 {
-	size_t	len = literal.length();
-	for (size_t i = 0; i < len; i++)
+	int	i = 0;
+	for (auto c : literal)
 	{
-		if (!std::isdigit( literal[i] ) && !(i == 0 && literal[i] == '-'))
+		if (!std::isdigit( c ) && !(i == 0 && c == '-'))
 			return (false);
+		i++;
 	}
 	return true;
 };
@@ -50,7 +51,7 @@ e_literals	getType( std::string literal )
 void	printChar( char c, int i )
 {
 	if (i >= 0 && i <= 255 && isprint(c))
-		std::cout << "char: " << c;
+		std::cout << "char: " << c << std::endl;
 	else if (i >= 0 && i <= 255)
 		std::cout << "char: " << "Non displayable" << std::endl;
 	else

@@ -29,6 +29,7 @@ void bureaucrat(std::string name, int grade)
 
 int main()
 {
+	std::cout << "Testing exceptions for Grade\n";
 	bureaucrat("Usman", 42);
 	bureaucrat("Usman", 1);
 	bureaucrat("Usman", 150);
@@ -57,10 +58,10 @@ int main()
 	std::cout << "\n" << onefifty << "\n";
 	try
 	{
-		std::cout << "\033[36mAttempting to increment grade\033[0m\n";
+		std::cout << "\033[36mAttempting to decrement grade\033[0m\n";
 		onefifty.decrementGrade();
 		std::cout << onefifty << "\n";
-		std::cout << "\033[36mAttempting to increment grade\033[0m\n";
+		std::cout << "\033[36mAttempting to decrement grade\033[0m\n";
 		onefifty.decrementGrade();
 		std::cout << onefifty << "\n";
 	}

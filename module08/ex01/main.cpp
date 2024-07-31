@@ -11,9 +11,6 @@
 /* ************************************************************************** */
 
 #include "Span.hpp"
-#include <exception>
-#include <iostream>
-#include <vector>
 
 void	checkInsertions( Span span )
 {

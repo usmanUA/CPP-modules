@@ -13,12 +13,10 @@
 #include "Bureaucrat.hpp"
 
 Bureaucrat::Bureaucrat(void) : Name(""), Grade(150)
-{
-};
+{};
 
 Bureaucrat::~Bureaucrat(void)
-{
-};
+{};
 
 Bureaucrat::Bureaucrat(std::string Name, int Grade) : Name(Name)
 {
@@ -79,6 +77,6 @@ const	char*	Bureaucrat::GradeTooLowException::what( void ) const throw()
 
 std::ostream&	operator<<(std::ostream& out, const Bureaucrat& burea)
 {
-	out << Colors::GREEN << burea.getName() << "'s Grade is: " << burea.getGrade() << Colors::GREEN;
+	out << Colors::GREEN << burea.getName() << ", bureaucrat grade " << burea.getGrade() << "." << Colors::GREEN;
 	return out;
 };

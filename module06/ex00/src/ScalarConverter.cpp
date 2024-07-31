@@ -31,10 +31,10 @@ ScalarConverter&	ScalarConverter::operator=( const ScalarConverter& from)
 
 void	ScalarConverter::convert( std::string literal )
 {
-	char	c = NOLLA;
-	int	i = NOLLA;
-	float	f = NOLLA;
-	double	d = NOLLA;
+	char	c = ZERO;
+	int	i = ZERO;
+	float	f = ZERO;
+	double	d = ZERO;
 
 	int	type = getType( literal );
 	switch (type)

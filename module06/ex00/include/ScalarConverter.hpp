@@ -16,7 +16,7 @@
 #include <iostream>
 #include <iomanip>
 
-# define NOLLA 0
+# define ZERO 0
 
 enum	e_literals
 {
