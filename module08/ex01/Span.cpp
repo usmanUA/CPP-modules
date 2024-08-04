@@ -11,8 +11,6 @@
 /* ************************************************************************** */
 
 #include "Span.hpp"
-#include <algorithm>
-#include <iostream>
 
 Span::Span( void )
 {};

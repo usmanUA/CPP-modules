@@ -89,7 +89,7 @@ int main(int, char**)
 	std::cout << "\033[32mWritten Str Array of size 3 (with NON-NULL elements):\033[0m \n";
 	printArray(strs);
 
-	std::cout << "\033[32mSubject Main Tests):\033[0m \n";
+	std::cout << "\033[32m(Subject Main Tests):\033[0m \n";
 
 	Array<int> numbers(MAX_VAL);
 	int* mirror = new int[MAX_VAL];
