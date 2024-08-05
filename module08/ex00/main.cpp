@@ -35,7 +35,7 @@ int main() {
     // STRING TEST
     std::cout << "\033[32mTesting with string\033[0m\n";
     std::string str = "Hello";
-
+    std::cout << str << std::endl;
     if (easyfind(str, 'e'))
     	std::cout << "Found e!\n";
     else
